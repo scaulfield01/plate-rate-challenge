@@ -33,12 +33,21 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
 	console.log("/");
+	res.render('pages/index');
 })
 
 //set up posts route
 
 app.get('/posts', (req, res) => {
 	console.log("/posts");
+	request(postApiUrl, (err, response) => {
+	    if (!err && response.statusCode == 200) {
+	    	console.log(response.body);
+	    } else {
+	    	console.log(err);
+	    }
+	});
+	res.render('pages/posts');
 })
 
 // set up about me route
@@ -50,6 +59,7 @@ app.get('/aboutme', (req, res) => {
 // set up catch all route
 
 app.get('*', (req, res) => {
+	res.render('pages/notfound');
 	console.log("/Not Found");
 })
 

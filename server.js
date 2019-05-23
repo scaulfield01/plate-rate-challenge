@@ -53,7 +53,25 @@ app.get('/posts', (req, res) => {
 // set up about me route
 
 app.get('/aboutme', (req, res) => {
-	console.log("/aboutme");
+	let query = req.query;
+	let aboutmeResponse = "";
+	switch(query.q) {
+		case 'description':
+			aboutmeResponse = "description"
+			break;
+		case 'tech':
+			aboutmeResponse = "tech"
+			break;
+		case 'techstack':
+			aboutmeResponse = "techstack"
+			break;
+		case 'hobbies':
+			aboutmeResponse = "hobbies"
+			break;
+		default:
+			aboutmeResponse = "default"
+	}
+	console.log(aboutmeResponse);
 })
 
 // set up catch all route

@@ -18,15 +18,16 @@ Coding Challenge for PlateRate
 
 ## To get running 
 
-1. git clone https://github.com/scaulfield01/plate-rate-challenge.git on to desktop
-2. cd into the plate-rate-challenge folder
-3. npm install 
-4. node server
-5. Navigate to **http://localhost:3000/**
-6. To view posts either click on **"Check out Posts"** on the home page or enter **http://localhost:3000/posts**
-7. To view aboutme with out parameters click **"See about me JSON"** or enter ``` curl http://localhost:3000/aboutme ```
-8. To view the JSON parameters at work enter **http://localhost:3000/aboutme?q=description** into the browser with the desired q value in this case "description" or ``` curl http://localhost:3000/aboutme?q=description ``` following the same format.
-9. To view the Not Found page simply enter a route that isnt there example **http://localhost:3000/notsomethingyouhave**
+1. open terminal and navigate to a directory where you would like to test, example your desktop.
+2. ``` git clone https://github.com/scaulfield01/plate-rate-challenge.git on to desktop ``` 
+3. move into folder ``` cd into the plate-rate-challenge folder ```.
+4. install packages using the command ``` npm install ```.
+5. start server using the command ``` node server ```.
+6. Navigate to **http://localhost:3000/**.
+7. To view posts either click on **"Check out Posts"** on the home page or enter **http://localhost:3000/posts**.
+8. To view aboutme with out parameters click **"See about me JSON"** or enter ``` curl http://localhost:3000/aboutme ```
+9. To view the JSON parameters at work enter **http://localhost:3000/aboutme?q=description** into the browser with the desired q value in this case "description" or ``` curl http://localhost:3000/aboutme?q=description ``` following the same format.
+10. To view the Not Found page simply enter a route that isnt there example **http://localhost:3000/notsomethingyouhave**
 
 
 

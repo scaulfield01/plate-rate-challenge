@@ -9,19 +9,19 @@ const questionResponse =
 {
 	description: {	
 		question: 'Tell me a little bit about yourself?', 
-		response: 'I am a person'
+		response: 'My name is Stephen, I was born and raised in Los Angeles. I recently lived in San Francisco and Philadelphia'
 	},
 	tech: {	
 		question: 'What excites you about technology?', 
-		response: 'that its techincal'
+		response: 'That there is a never-ending amount of things to be learned'
 	},
 	techstack: {
 		question: 'What is your preferred technology stack?', 
-		response: 'how it stackble'
+		response: 'My preference would be anything javascript based especially with a react frontend.'
 	},
-	hobbies: {	
+	hobbies: {
 		question: 'What are your favorite hobbies?', 
-		response: 'ones where I dont hobble'
+		response: 'I enjoy video games, snowboarding, dog training, music production, and dungeons and dragons'
 	}
 };
 

@@ -41,7 +41,6 @@ app.get('/', (req, res) => {
 })
 
 //set up posts route
-
 app.get('/posts', (req, res) => {
 	request(postApiUrl, (err, response) => {
 	    if (!err && response.statusCode == 200) {
@@ -54,10 +53,9 @@ app.get('/posts', (req, res) => {
 })
 
 // set up about me route
-
 app.get('/aboutme', (req, res) => {
 	let query = req.query;
-	let aboutmeResponse = "";
+	let aboutmeResponse = {};
 	switch(query.q) {
 		case 'description':
 			aboutmeResponse = questionResponse.description;

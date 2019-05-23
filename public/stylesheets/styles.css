@@ -1,12 +1,24 @@
+.title-bar {
+  text-align: center;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.links {
+  margin: 0 auto;
+}
+
 .posts-container {
 	display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   justify-content: space-between;
-  /*list-style-position: inside;*/
 }
-
 
 .post-block {
 	max-width: 50%;

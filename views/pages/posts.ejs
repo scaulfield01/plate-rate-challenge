@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+ <% include partials/head %> 
+</head>
 <body>
   <div>
   	<h5>posts</h5>
-  	<ol>
+  	<ol class="posts-container">
   	  <% Object.keys(posts).forEach(function(prop) { %>
-		    	<li>	
-		    		<p><%-posts[prop]["title"] : %></p>
-		    		<p><%- posts[prop]["body"] %></p>
+		    	<li class="post-block">	
+		    		<div class="post-title"><%-posts[prop]["title"] %></div>
+		    		<div class="post-body"><%- posts[prop]["body"] %></div>
 		    	</li>
-		    	<br>
     	<% }); %>
   	</ol>
   </div>

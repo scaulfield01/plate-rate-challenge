@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser')
 const cors = require('cors');
 const request = require('request');
+const path = require('path');
 
 const questionResponse = 
 {
@@ -25,15 +26,18 @@ const questionResponse =
 };
 
 const postApiUrl = 'https://jsonplaceholder.typicode.com/posts';
-//set up view engine
 
+// path to public files for stylesheet reference in head 
+app.use(express.static(path.join(__dirname, 'public')));
+
+//set up view engine
 app.set('view engine', 'ejs');
 
 //set up index route 
 
 app.get('/', (req, res) => {
 	console.log("/");
-	res.render('pages/index');
+	res.render('pages/index', {page:'Home'});
 })
 
 //set up posts route
@@ -42,13 +46,11 @@ app.get('/posts', (req, res) => {
 	request(postApiUrl, (err, response) => {
 	    if (!err && response.statusCode == 200) {
 	    	let postsObjects = JSON.parse(response.body);
-	    	console.log(postsObjects);
-	    	res.render('pages/posts', {posts: postsObjects});
+	    	res.render('pages/posts', {page:'Posts', posts: postsObjects});
 	    } else {
-	    	res.render('pages/notfound');
+	    	res.render('pages/notfound', {page:'Not Found'});
 	    }
 	});
-	// 
 })
 
 // set up about me route
@@ -70,7 +72,7 @@ app.get('/aboutme', (req, res) => {
 			aboutmeResponse = questionResponse.hobbies;
 			break;
 		default:
-			aboutmeResponse = Object.values(questionResponse)
+			aboutmeResponse = Object.values(questionResponse);
 	}
 	res.json(aboutmeResponse);
 })
@@ -78,8 +80,7 @@ app.get('/aboutme', (req, res) => {
 // set up catch all route
 
 app.get('*', (req, res) => {
-	res.render('pages/notfound');
-	console.log("/Not Found");
+	res.render('pages/notfound', {page:'Not Found'});
 })
 
 app.listen(3000, () => console.log('app listening on port 3000!'));

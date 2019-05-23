@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-</head>
 <body>
   <div>
-    posts
+  	<h5>posts</h5>
+  	<ol>
+  	  <% Object.keys(posts).forEach(function(prop) { %>
+		    	<li>	
+		    		<p><%-posts[prop]["title"] : %></p>
+		    		<p><%- posts[prop]["body"] %></p>
+		    	</li>
+		    	<br>
+    	<% }); %>
+  	</ol>
   </div>
 </body>
-
 </html>
+
+

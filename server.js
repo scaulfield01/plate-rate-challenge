@@ -39,15 +39,16 @@ app.get('/', (req, res) => {
 //set up posts route
 
 app.get('/posts', (req, res) => {
-	console.log("/posts");
 	request(postApiUrl, (err, response) => {
 	    if (!err && response.statusCode == 200) {
-	    	console.log(response.body);
+	    	let postsObjects = JSON.parse(response.body);
+	    	console.log(postsObjects);
+	    	res.render('pages/posts', {posts: postsObjects});
 	    } else {
-	    	console.log(err);
+	    	res.render('pages/notfound');
 	    }
 	});
-	res.render('pages/posts');
+	// 
 })
 
 // set up about me route
@@ -57,21 +58,21 @@ app.get('/aboutme', (req, res) => {
 	let aboutmeResponse = "";
 	switch(query.q) {
 		case 'description':
-			aboutmeResponse = "description"
+			aboutmeResponse = questionResponse.description;
 			break;
 		case 'tech':
-			aboutmeResponse = "tech"
+			aboutmeResponse = questionResponse.tech;
 			break;
 		case 'techstack':
-			aboutmeResponse = "techstack"
+			aboutmeResponse = questionResponse.techstack;
 			break;
 		case 'hobbies':
-			aboutmeResponse = "hobbies"
+			aboutmeResponse = questionResponse.hobbies;
 			break;
 		default:
-			aboutmeResponse = "default"
+			aboutmeResponse = Object.values(questionResponse)
 	}
-	console.log(aboutmeResponse);
+	res.json(aboutmeResponse);
 })
 
 // set up catch all route

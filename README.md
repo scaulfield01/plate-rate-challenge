@@ -18,9 +18,9 @@ Coding Challenge for PlateRate
 
 ## To get running 
 
-1. open terminal and navigate to a directory where you would like to test, example your desktop.
-2. ``` git clone https://github.com/scaulfield01/plate-rate-challenge.git on to desktop ``` 
-3. move into folder ``` cd into the plate-rate-challenge folder ```.
+1. Open terminal and navigate to a directory where you would like to test, example your desktop.
+2. Clone from github ``` git clone https://github.com/scaulfield01/plate-rate-challenge.git ```.
+3. Move into folder ``` cd into the plate-rate-challenge folder ```.
 4. install packages using the command ``` npm install ```.
 5. start server using the command ``` node server ```.
 6. Navigate to **http://localhost:3000/**.
